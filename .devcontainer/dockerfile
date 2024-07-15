@@ -1,0 +1,13 @@
+# syntax=docker/dockerfile:1
+
+FROM ubuntu:20.04
+
+# Configure user
+RUN adduser compiler
+
+# Install dependencies
+RUN apt clean \
+  && apt update \
+  && apt install -y git build-essential bison flex
+
+CMD ["/bin/bash"]

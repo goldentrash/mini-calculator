@@ -1,0 +1,24 @@
+{
+  "name": "compiler",
+  "runArgs": [
+    "--name",
+    "compiler"
+  ],
+  "containerUser": "compiler",
+  "build": {
+    "dockerfile": "./dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/home/compiler/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools-extension-pack",
+        "donjayamanne.githistory",
+        "oderwat.indent-rainbow",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  }
+}
